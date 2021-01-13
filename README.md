@@ -9,4 +9,5 @@ Example datasets representing distinct entities can be found in this github. Dat
   -KEGG PATHWAY (keggds.json)  
   -BioModels (biomodelsds.json)  
   -CRAFT annotated papers (craftds.json)  
+  -OMIM diseases (omimds.json)  
   
