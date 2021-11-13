@@ -1,0 +1,326 @@
+
+html {
+    font-family: "Lucida Sans", sans-serif;
+}
+
+body {
+    background: linear-gradient(90deg, rgb(131, 215, 236) -50%, rgba(238, 236, 236, 0.103) 40%, rgb(131, 215, 236) 220%);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: darkblue;
+  text-decoration: underline;
+}
+
+#link {
+  color: white;
+
+}
+
+#link:hover {
+  color: darkcyan;
+  
+}
+
+.title {
+    background-color: #251488;
+    color: #ffffff;
+    padding: 15px;
+}
+
+.container-fixed {
+    display: grid;
+    grid-template-columns: 650px 650px;
+    column-gap: 20px;
+    padding: 10px;
+    column-gap: 50px;
+    row-gap: 10px;
+    justify-content: center;
+    border: 1px solid black;
+    background-color: rgb(190, 222, 233);
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.container-fixed div {
+  max-height: 200px;
+  overflow: auto;
+  padding: 10px;
+}
+
+.container-dynamic {
+  display: grid;
+  grid-template-columns: 400px 500px 400px;
+  padding: 10px;
+  column-gap: 5px;
+  row-gap: 10px;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.container-dynamic div {
+    overflow: auto;
+}
+
+.category {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  font-size: 16px;
+  padding: 1px;
+  background-color: darkcyan;
+  color: white;
+  border: solid 1px whitesmoke;
+  text-align: center;
+  overflow:auto;
+  vertical-align:top;
+  display:inline-block;
+
+}
+div + p{ /* selects all <p> elements that are placed immediately after <div> elements */
+  display:block;
+}
+
+/* make the first two panels descritption and class appear and stay on top of screen even when scrolling */
+.fixed-panel {
+  max-height: 270px;
+  overflow:auto;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.5;
+  margin: 0 auto;
+  padding:10px;
+}
+
+/* hide the other panels information and only show it when clicked on */
+.panel {
+  display: none;
+  max-height: 300px;
+  margin: 0 auto;
+}
+
+div.category {
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+}
+
+.category:hover {
+  background-color: #251488;
+  cursor: pointer;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+
+/*-------- FOR THE NEW USERS ----------------------------------------*/
+.field-container{
+  align-content: center;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  border-color: darkgrey;
+  border-style: groove;
+  padding: 30px;
+  margin-top: 50px;
+  background-color: darkblue;
+  font-size: x-large;
+
+}
+
+div input[type="text"]{
+  font-size: x-large;
+  display: inline-block;
+  clear: left;
+  margin-bottom: 5px;
+}
+
+label {
+  color: white;
+  float: left;
+  text-align: right;
+  width: 250px;
+}
+
+input[type="submit"]{
+  margin-top: 5px;
+}
+
+
+
+/*-------------------------------------------Form css----------------------------------*/
+
+/* form div that sticks to the page bottom of page when scrolling down */
+.simform {
+  background-color: rgb(190, 222, 233);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+  
+.slideContainer {
+  width: 50%;
+  margin: auto; /*Horizontally center a block element*/
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; /*this makes it unable to highlight the text inside */
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: linear-gradient(to right, rgb(179, 0, 12, 0.8) 0%, rgb(228, 0, 16, 0.8) 20%, rgb(222, 225, 221) 50%, rgb(31, 213, 55, 0.8) 80%, rgb(0, 179, 44, 0.8) 100%);
+  outline: none;
+  opacity: 0.9;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-radius: 5px;
+  box-shadow: 1px 10px 30px 0px rgb(8, 0, 0);
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+/* for chrome */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 30px;
+  background: navy;
+  cursor:pointer;
+}
+
+/* For mozilla firefox */
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 30px;
+  background: navy;
+  cursor:pointer;
+}
+
+/* For Internet Explorer */
+.slider::-ms-thumb {
+  width: 10px;
+  height: 30px;
+  background: navy;
+  cursor:pointer;
+}
+
+.slider::after {
+  content: 'Equivalent';
+  color: steelblue;
+  font-size: 2rem;
+  position: absolute;
+  right: -21%;
+}
+
+.slider::before {
+  content: 'Different';
+  color: steelblue;
+  font-size: 2rem;
+  position: absolute;
+  left: -17%;
+}
+
+.submitButton {
+  font-size: 20px;
+  -webkit-appearance: none;
+  background-color: rgb(9, 2, 43);
+  color: #fff;
+  padding: 8px 0;
+  border-radius: 10%;
+  width: 160px;
+  border: none;
+  height: fit-content;
+  cursor: pointer;
+
+  /* this visibility hidden will hide the submit button */
+  visibility: hidden; 
+  width: 160px;
+  font-size: 20px;
+  background-color: rgb(9, 2, 43);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: -5px;
+  margin-left: -84px;
+}
+
+/* popup arrow */
+.range-value .submitButton::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-width: 7px;
+  border-style: solid;
+  border-color: rgb(9, 2, 43) transparent transparent transparent;
+}
+
+.range-value .submitButton:hover {
+  background-color: rgb(2, 83, 83);
+  color: #fff;
+}
+
+.submitButton:hover {
+  background: steelblue;
+  color: yellow;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* popup container */
+
+/* the actual popup */
+.slideContainer .popupText {
+  visibility: hidden;
+  width: 160px;
+  font-size: 20px;
+  background-color: rgb(9, 2, 43);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 120%;
+  margin-left: -80%;
+}
+
+.slideContainer .popupText:hover {
+  background-color: rgb(2, 83, 83);
+  color: yellow;
+}
+
+/* toggle this class- hide and show the popup */
+.slideContainer .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s;
+}
+
+/* add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+  
